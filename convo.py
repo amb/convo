@@ -1,5 +1,6 @@
 import openai
 import pygments
+from prompt_toolkit import prompt
 from pygments import highlight
 from pygments.formatters import TerminalFormatter
 from pygments.lexers import get_lexer_by_name
@@ -14,10 +15,11 @@ def lightgrey(text):
 
 
 def main():
+    print("Chat started. Press Alt-Enter or Esc follwed by Enter to send message.")
     messages = []
     while True:
         print()
-        query = input("> ")
+        query = prompt("> ", multiline=True)
         if query == "" or query == "exit" or query == "quit":
             break
         messages.append({"role": "user", "content": query})
@@ -40,3 +42,7 @@ def main():
                 final.append(lightgrey(text))
 
         print("```".join(final))
+
+
+if __name__ == "__main__":
+    main()
