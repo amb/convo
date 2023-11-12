@@ -10,7 +10,7 @@ setup(
     entry_points={"console_scripts": ["convo=convo:main"]},
     install_requires=[
         'pygments',
-        'openai',
+        'openai==0.28',
         'prompt-toolkit',
     ],
 )
