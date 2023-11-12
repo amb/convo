@@ -8,4 +8,9 @@ setup(
     version="0.1.0",
     py_modules=["convo"],
     entry_points={"console_scripts": ["convo=convo:main"]},
+    install_requires=[
+        'pygments',
+        'openai',
+        'prompt-toolkit',
+    ],
 )
